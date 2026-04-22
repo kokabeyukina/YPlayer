@@ -1,0 +1,113 @@
+:root{
+    --gb: #202020;
+    --bgd: #0a0a0a;
+    --bgl: #252525;
+    --bgsl: #2b2b2b;
+    --dark-red: #ac0000;
+    --light-red: #eb0010;
+    --base-font: "Consolas", "DFKai-SB"; 
+    /*
+    #1A212B
+    #11141B
+    #651A1B
+    #521415
+    #181C25
+    */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--base-font); 
+    background: var(--gb); 
+    color: #E3E3E3;
+    padding: 0px;
+    margin: 0px;
+}
+
+button{ 
+    padding: 5px 10px; 
+    margin: 4px;
+    cursor: pointer; 
+    background: var(--dark-red); 
+    color: #E3E3E3; 
+    border: none; 
+    border-radius: 6px; 
+    font-weight: bold;
+    font-size: 16pt;
+    font-family: var(--base-font); 
+    transition: background-color 0.2s ease;
+    box-shadow: 1px 1px 4px 0px #000;
+}
+    button:hover{
+        background: #6b0000;
+    }
+    button:active{
+        box-shadow: 1px 1px 2px 0px #000;
+    }
+.button-row{
+    display: flex;
+    margin: 5px;
+
+}
+
+img.icon-button{
+    background: transparent;
+    margin: 4px;
+    margin-bottom: -10px;
+    padding: 0px 0px; 
+    box-shadow: none;
+    border-radius: 6px; 
+    cursor: pointer;
+}
+    img.icon-button:hover{
+        background-color: #ffffff25;
+    }
+
+
+input[type="range"]{
+    appearance: none;
+    background: transparent;
+}
+    input[type="range"]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        height: 18px;
+        width: 4px;
+        transition: background-color 0.2s ease;
+        background-color: #adadad;
+        border-radius: 4px;
+        margin-top: -6px;
+    }
+        input[type="range"]:hover::-webkit-slider-thumb{
+            background-color: #ffffff;
+        }
+    input[type="range"]::-webkit-slider-runnable-track{
+        height: 6px;
+        cursor: pointer;
+        background: var(--dark-red);
+        border-radius: 3px;
+    }
+
+input[type="text"], input[type="number"], textarea{
+    padding: 3px;
+    font-family: var(--base-font);
+    border-radius: 5px;
+    border: none;
+}
+    textarea::-webkit-scrollbar{
+        width: 7px;
+    }
+    textarea::-webkit-scrollbar-thumb{
+        background: #000000a0;
+        border-radius: 5px;
+    }
+
+.thumbnail{
+    background: var(--bgl);
+    padding: 3px;
+    border-radius: 6px;
+}
+    .thumbnail img{
+        border-radius: 5px;
+        margin-bottom: -0.25em;
+    }

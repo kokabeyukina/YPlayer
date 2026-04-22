@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y play</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main">
+        <div id="explorer">
+            <div class="category" data-category="folder">
+                <div class="header">
+                    <img src="icon/arrow_down.svg" class="expand-btn">
+                    <img src="icon/folder.svg">
+                    <span>Folders</span>
+                    <img src="icon/plus.svg" class="icon-button" title="Add Folder">
+                </div>
+                <div class="container"></div>
+            </div>
+            <div class="category" data-category="playlist">
+                <div class="header">
+                    <img src="icon/arrow_down.svg" class="expand-btn">
+                    <img src="icon/playlist.svg">
+                    <span>Playlists</span>
+                    <img src="icon/plus.svg" class="icon-button" title="Create playlist">
+                </div>
+                <div class="container"></div>
+            </div>
+        </div>
+        <div id="explorer-handle"><div></div></div>
+        <div id="tabs-section">
+            <div id="tabs-header">
+                <div class="tab-item active" data-tab_id="queue">
+                    <img src="icon/queue.svg">
+                    <span>Queue</span>
+                    <!-- <img src="icon/close.svg" class="icon-button"> -->
+                </div>
+            </div>
+            <div id="tab-body">
+                <div class="tab-pane active" data-tab_id="queue">
+                    <div class="tab-tools">
+                        <img src="icon/play_arrow.svg" class="tab-player" height="100">
+                        <div class="tools-menu">
+                            <div class="title"><img src="icon/queue.svg">Queue</div>
+                            <div class="options">
+                                <img class="icon-button add-playlist-btn" src="icon/plus.svg" title="Add songs">
+                                <img class="icon-button shuffle-btn" src="icon/random_off.svg" title="Shuffle songs">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="thumbnail">
+            <img src="./album_placeholder.png">
+        </div>
+        <div id="menu">
+            <div id="footer-header">
+                <div id="song-label">
+                    <span id="title-label">[No Title]</span><br>
+                    <span id="artist-label">[No Artist]</span>
+                </div>
+                <div>
+                    <img class="icon-button" id="download-btn" src="icon/download.svg" title="Download new song">
+                    <img class="icon-button" id="settings-btn" src="icon/settings.svg" title="Settings">
+                </div>
+            </div>
+            <div id="controls">
+                <div id="playlist-controls">
+                    <img class="icon-button" id="stop-btn" src="icon/stop.svg" title="Stop">
+                     <img class="icon-button" id="playback-btn" src="icon/repeat_on.svg">
+                    <img class="icon-button" id="edit-btn" src="icon/edit.svg" title="Edit metadata">
+                </div>
+                <div id="player-controls">
+                    <img class="icon-button" id="skip-left-btn" src="icon/skip_left.svg">
+                    <img class="icon-button" id="play-pause-btn" src="icon/play_arrow.svg">
+                    <img class="icon-button" id="skip-right-btn" src="icon/skip_right.svg">
+                </div>
+                <div id="audio-controls">
+                    <div id="volume">
+                        <img src="icon/volume_100.svg" id="volume-icon">
+                        <input type="range" id="volume-slider" value="50">
+                    </div>
+                    <div id="speed">
+                        <div id="speed-input">
+                            <input type="text" step="0.1" value="1.00">
+                            <span>x</span>
+                        </div>
+                        <input type="range" id="speed-slider" min="0.25" max="4" step="0.25" value="1">
+                    </div>
+                </div>
+            </div>
+            <div id="timer">
+                <audio id="audio-player" src="">Can't play Audio in this device</audio>
+                <span id="audio-time">00:00</span>
+                <input type="range" id="audio-slider" step="0.05" value="0">
+                <span id="audio-length">00:00</span>
+            </div>
+        </div>
+    </div>
+    <div id="playlist-creator" class="upper-menu">
+        <div class="upper-menu-wrapper">
+            <span>Name Your Playlist</span>
+            <input type="text" placeholder="Playlist Name">
+            <div class="button-row">
+                <button onclick="closePlayListCreator()">Cancel</button>
+                <button onclick="createPlaylist()">Add</button>
+            </div>
+        </div>
+    </div>
+    <div id="settings-menu" class="upper-menu">
+        <div class="upper-menu-wrapper">
+            <span>Settings</span>
+            <div>
+                <label for="downloadPath">Download Path:</label>
+                <input type="text" name="downloadPath" placeholder="C:\Path\To\Music">
+            </div>
+            <div class="button-row">
+                <button onclick="closeSettingsMenu()">Cancel</button>
+                <button onclick="saveSettings()">Save</button>
+            </div>
+        </div>
+    </div>
+    <div id="dropper">
+        <div>
+            <img src="icon/drop_song.svg">
+            <span>Drop Songs Here</span>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

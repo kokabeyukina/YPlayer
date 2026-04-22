@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="downloader.css">
+</head>
+<body>
+    <div id="url-section">
+        <label for="title">URL:</label>
+        <input type="text" id="url-input" placeholder="place song link here">
+        <button onclick="searchSong()">Search</button>
+    </div>
+
+    <span id="loading-span">Loading URL...</span>
+    <div id="video-section">
+        <div id="video-display">
+            <div class="thumbnail">
+                <img src="video-placeholder.png">
+            </div>
+            <span id="video-title">instalei o sistema da coreia do norte e fui espionado</span>
+        </div>
+        <div id="crop-entry">
+            <span id="min-txt">00:00</span>
+            <div class="double-range-wrapper">
+                <div id="range-bar"></div>
+                <input type="range" id="min-slider" step="1" min="0" max="100" value="0">
+                <input type="range" id="max-slider" step="1" min="0" max="100" value="100">
+            </div>
+            <span id="max-txt">01:40</span>
+        </div>
+        <button onclick="downloadSong()">Download</button>
+    </div>
+
+    <div id="download-section">
+        <span id="download-status" title="[CommandLine] Loading yt-dlp">[CommandLine] Loading yt-dlp</span>
+        <div id="download-progress">
+            <div id="download-bar"></div>
+            <span>50%</span>
+        </div>
+        <div class="button-row">
+            <button onclick="editMetadata()">Edit Medatada</button>
+            <button onclick="closeWindow()">Listen To Song</button>
+        </div>
+    </div>
+
+    <script src="downloader.js"></script>
+</body>
+</html>

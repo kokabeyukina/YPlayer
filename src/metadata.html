@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="metadata.css">
+    <script src="metadata.js"></script>
+</head>
+<body>
+    <div id="file-path">
+        <span>C:/ERROR</span>
+    </div>
+    <div id="form">
+        <div class="form-half">
+            <div class="tag-entry">
+                <label for="title">Title:</label>
+                <input type="text" id="title">
+            </div>
+            <div class="tag-entry">
+                <label for="artist">Artist:</label>
+                <input type="text" id="artist">
+            </div>
+            <div class="tag-entry">
+                <label for="album">Album:</label>
+                <input type="text" id="album">
+            </div>
+            <div class="tag-entry">
+                <label for="year">Year:</label>
+                <input type="number" id="year">
+            </div>
+            <div class="tag-entry">
+                <label for="purl">URL:</label>
+                <input type="text" id="purl">
+            </div>
+            <div class="tag-entry textarea-entry">
+                <label for="description">Description:</label>
+                <textarea id="description"></textarea>
+            </div>
+        </div>
+        <div class="form-half">
+            <div class="tag-entry textarea-entry">
+                <label for="uslt">Lyrics:</label>
+                <textarea id="uslt"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div id="img-editor">
+        <div class="img-wrapper">
+            <div id="crop-container">
+                <img id="source-img" src="./video_placeholder.png" alt="Source">
+                <div id="crop-frame">
+                    <div id="resize-handle"></div>
+                </div>
+            </div>
+        </div>
+        <div id="img-buttons">
+            <img class="icon-button" src="icon/double_arrow_right.svg" id="crop-img-btn" title="Crop image">
+            <img class="icon-button" src="icon/square_ratio.svg" id="square-btn" title="Square selection">
+            <img class="icon-button" src="icon/add_photo.svg" id="add-img-btn" title="Import image">
+        </div>
+        <canvas id="output-canvas" style="display:none;"></canvas>
+        <div class="img-wrapper">
+            <img id="result-preview" alt="Result will appear here" src="./video_placeholder.png">
+        </div>
+    </div>
+
+
+    <div class="button-row">
+        <button id="save-btn" onclick="saveAndClose()">Save</button>
+        <button id="save-btn" onclick="saveAndListen()">Save And Listen</button>
+        <button id="more-less-btn" onclick="showHideInfo()">More Info</button>
+    </div>
+
+    <div id="tag-list"></div>
+</body>
+</html>

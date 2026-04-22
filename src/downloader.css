@@ -1,0 +1,140 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px;
+    font-size: 20pt;
+    overflow: hidden;
+}
+#url-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+    #url-section input{
+        font-size: 16pt;
+        margin: 10px;
+        flex-grow: 1;
+    }
+
+#video-section{
+    display: auto;
+    border-top: 1px solid #888;
+    padding: 15px 0;
+}
+    #video-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        .thumbnail{
+            background-color: var(--bgl);
+        }
+            .thumbnail img{
+                max-height: 300px;
+                max-width: 600px;
+            }
+        #video-title{
+            margin-top: 5px;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 80%;
+        }
+    
+    #crop-entry{
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+        #crop-entry span{
+            font-size: 80%;
+            margin: 0 10px;
+        }
+        .double-range-wrapper{
+            --min-crop: 0%;
+            --max-crop: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            height: 18px;
+            position: relative;
+            width: 300px;
+            flex-grow: 1;
+            cursor: pointer;
+        }
+            .double-range-wrapper div{
+                position: absolute;
+                background-color: #da0707;
+                background: linear-gradient(to right, #ccc 0%, #ccc var(--min-crop), #f00 var(--min-crop), #f00 var(--max-crop), #ccc var(--max-crop), #ccc 100%);
+                height: 10px;
+                width: 100%;
+                border-radius: 10px;
+            }
+            .double-range-wrapper input[type="range"]{
+                position: absolute;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                left: 0;
+                top: 5;
+                pointer-events: none;
+                appearance: none;
+                background: none;
+            }
+            .double-range-wrapper input[type="range"]::-webkit-slider-thumb{
+                pointer-events: auto;
+                width: 12px;
+                height: 18px;
+                background: #ffffff;
+                border-radius: 2px;
+            }
+            .double-range-wrapper input[type="range"]:hover::-webkit-slider-thumb{
+                background-color: #ffffff;
+            }
+            .double-range-wrapper input[type="range"]::-webkit-slider-runnable-track{
+                background: transparent;
+            }
+
+#download-section{
+    border-top: 1px solid #888;
+    padding: 15px 0;
+}
+    #download-status{
+        font-size: 60%;
+        color: #ccc;
+        height: 38px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    #download-progress{
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+        #download-bar{
+            --progress: 50%;
+            background: linear-gradient(to right, #f00 0%, #f00 var(--progress), #ccc var(--progress), #ccc 100%);
+            width: calc(100% - 90px);
+            height: 12px;
+            border-radius: 5px;
+        }
+        #download-progress span{
+            font-size: 80%;
+            margin-left: 8px;
+        }
+     #video-section, #loading-span, #download-section, #download-section .button-row{ 
+        display: none;
+    }
+
+
+
+
+
