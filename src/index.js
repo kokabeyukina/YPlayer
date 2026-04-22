@@ -206,6 +206,8 @@ async function apiUpdateSongData(songPath){
         songItem.querySelector("img").src = pathLogger[songPath].img;
         songItem.querySelector(".title").innerText = pathLogger[songPath].title;
         songItem.querySelector(".artist").innerText = pathLogger[songPath].artist;
+        songItem.querySelector(".title").title = pathLogger[songPath].title;
+        songItem.querySelector(".artist").title = pathLogger[songPath].artist;
         pywebview.api.log(tab.dataset.tab_id+": songItem updated")
     });
 

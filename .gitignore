@@ -2,3 +2,4 @@ data.json
 __pycache__/
 dist/
 build/
+.venv

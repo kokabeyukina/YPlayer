@@ -1,3 +1,17 @@
+@font-face{
+    font-family: 'Consolas';
+    src: url('fonts/consola.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'DFKai-SB';
+    src: url('fonts/kaiu.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root{
     --gb: #202020;
     --bgd: #0a0a0a;

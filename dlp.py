@@ -60,16 +60,20 @@ def updateDlp(window: Window | None=None) -> dict:
         
         if "Use pip to update" in output or "installed with pip" in output:
             updateUIStatus(window, "Detected pip installation. Upgrading via pip...")
-            subprocess.run(
-                [sys.executable, "-m", "pip", "install", "-U", "--user", "yt-dlp"],
-                check=True
-            )
+            pipCmd = [sys.executable, "-m", "pip", "install", "-U", "yt-dlp"]
+            if not ((hasattr(sys, 'real_prefix')) or (item := getattr(sys, 'base_prefix', sys.prefix)) != sys.prefix):
+                pipCmd.append("--user")
+
+            subprocess.run(pipCmd, check=True)
             updateUIStatus(window, "Successfully updated yt-dlp via pip.")
             return {"success": True}
 
         if "Updated yt-dlp to version" in output:
             updateUIStatus(window, "Successfully updated yt-dlp binary.")
             return {"success": True}
+        
+        if "Permission denied" in output:
+            return {"success": False, "error": f"Update failed: Permission denied. Try running {YT_DLP_BIN} -U as admin/sudo"}
 
         return {"success": False, "error": f"Unexpected update status: {output.strip()}"}
 
